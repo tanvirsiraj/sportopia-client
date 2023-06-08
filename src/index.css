@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-color {
+  color: #0057b8;
+}
+.primary-bg-color {
+  background-color: #0057b8;
+}
+
+.text-primary {
+  color: white !important;
+}
