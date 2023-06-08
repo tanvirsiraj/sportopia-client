@@ -12,3 +12,11 @@
 .text-primary {
   color: white !important;
 }
+
+.active {
+  background-color: white;
+  color: #0057b8;
+  padding-inline: 10px;
+  border-radius: 1px;
+}
+/* font-semibold mt-2 lg:mt-0 lg:ms-14 */

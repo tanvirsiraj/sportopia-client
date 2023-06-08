@@ -1,43 +1,41 @@
-import { Link } from "react-router-dom";
+import ActiveLink from "../ActiveLink/ActiveLink";
 
 const Navbar = () => {
   const navItems1 = (
-    <div className="flex flex-col lg:flex-row primary-color lg:text-white">
-      <Link className="text-lg font-semibold mt-2 lg:mt-0 lg:ms-14 " to="/">
-        Home
-      </Link>
-      <Link
-        className="text-lg font-semibold mt-2 lg:mt-0 lg:ms-14"
+    <div className="flex flex-col lg:flex-row primary-color lg:text-white gap-3 lg:gap-10 font-semibold text-lg mb-6 lg:mb-0">
+      <ActiveLink to="/">Home</ActiveLink>
+      <ActiveLink
+        className="text-lg  font-semibold mt-2 lg:mt-0 lg:ms-14"
         to="/instructors"
       >
         Instructors
-      </Link>
-      <Link
+      </ActiveLink>
+      <ActiveLink
         className="text-lg font-semibold mt-2 lg:mt-0 mb-6 lg:mb-0 lg:ms-14"
         to="/classes"
       >
         Classes
-      </Link>
+      </ActiveLink>
     </div>
   );
   const navItems2 = (
     <div>
       {/*  <div>
-        <Link to="/dashboard">Dashboard</Link>
+        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
         <div className="avatar">
           <div className="w-24 rounded-full">
             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
         </div>
-        <Link>
+        <ActiveLink>
           <button>Logout</button>
-        </Link>
+        </ActiveLink>
       </div> */}
-      <Link to="/login">
+      <ActiveLink to="/login">
         <button className="btn btn-bg-white primary-color font-semibold text-lg ">
           Login
         </button>
-      </Link>
+      </ActiveLink>
     </div>
   );
   return (
@@ -69,9 +67,8 @@ const Navbar = () => {
             {navItems2}
           </ul>
         </div>
-        <Link to="/">
-          <h1 className="font-bold text-2xl">Sportopia</h1>
-        </Link>
+
+        <h1 className="font-bold text-2xl">Sportopia</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems1}</ul>
