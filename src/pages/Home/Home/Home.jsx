@@ -3,6 +3,7 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import SliderSection from "../SliderSection/SliderSection";
 import TopClasses from "../TopClasses/TopClasses";
 import TopInstructors from "../TopInstructors/TopInstructors";
+import AboutSportopia from "./AboutSportopia/AboutSportopia";
 // import SectionTitle from "../../Shared/SectionTitle";
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
       ></SectionTitle>
       <div className=" mb-20 grid lg:grid-cols-3 max-w-7xl mx-auto gap-10  lg:px-0 py-10">
         {sortedClasses.slice(0, 6).map((item) => (
-          <TopClasses key={item.id} item={item}></TopClasses>
+          <TopClasses key={item._id} item={item}></TopClasses>
         ))}
       </div>
       <SectionTitle
@@ -31,9 +32,10 @@ const Home = () => {
       ></SectionTitle>
       <div className=" mb-20 grid lg:grid-cols-3 max-w-7xl mx-auto gap-10  lg:px-0 py-10">
         {sortedClasses.slice(0, 6).map((item) => (
-          <TopInstructors key={item.id} item={item}></TopInstructors>
+          <TopInstructors key={item._id} item={item}></TopInstructors>
         ))}
       </div>
+      <AboutSportopia></AboutSportopia>
     </div>
   );
 };

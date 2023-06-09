@@ -28,7 +28,11 @@
   transform: translate(-50%, -50%);
   color: white;
 }
-
+.bg {
+  background-image: url(../public/ex.webp);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
 .swiper-button-prev::after,
 .swiper-button-next::after {
   font-size: 30px !important;
