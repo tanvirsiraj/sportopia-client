@@ -1,11 +1,11 @@
 import useSports from "../../../hooks/useSports";
+import SliderSection from "../SliderSection/SliderSection";
 
 const Home = () => {
   const [sports] = useSports();
   return (
     <div>
-      <h1>Home</h1>
-      <p>{sports.length}</p>
+      <SliderSection></SliderSection>
     </div>
   );
 };
