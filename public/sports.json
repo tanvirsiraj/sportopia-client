@@ -1,0 +1,134 @@
+[
+  {
+    "className": "Basketball Basics",
+    "students_no": 15,
+    "instructorName": "John Doe",
+    "img": "https://i.ibb.co/6BtrTmg/i1.jpg",
+    "instructorImg": "https://i.ibb.co/Hx0JVCS/1.jpg",
+    "email": "john.doe@example.com",
+    "seats": 20,
+    "price": 50,
+    "classImg": "https://i.ibb.co/3788m3x/ci1.jpg"
+  },
+  {
+    "className": "Soccer Skills",
+    "students_no": 12,
+    "instructorName": "Jane Smith",
+    "img": "https://i.ibb.co/vjtNjz8/i2.jpg",
+    "instructorImg": "https://i.ibb.co/z7rTtxL/2.jpg",
+    "email": "jane.smith@example.com",
+    "seats": 15,
+    "price": 40,
+    "classImg": "https://i.ibb.co/GCHssgh/ci2.jpg"
+  },
+  {
+    "className": "Tennis Training",
+    "students_no": 10,
+    "instructorName": "Michael Johnson",
+    "img": "https://i.ibb.co/KNcJPQF/i3.webp",
+    "instructorImg": "https://i.ibb.co/ZdmPYdn/3.jpg",
+    "email": "michael.johnson@example.com",
+    "seats": 12,
+    "price": 60,
+    "classImg": "https://i.ibb.co/hyR9k1v/ci3.jpg"
+  },
+  {
+    "className": "Gymnastics Fundamentals",
+    "students_no": 8,
+    "instructorName": "Sarah Thompson",
+    "img": "https://i.ibb.co/vhpSCcK/i4.jpg",
+    "instructorImg": "https://i.ibb.co/CbKthhF/4.webp",
+    "email": "sarah.thompson@example.com",
+    "seats": 10,
+    "price": 75,
+    "classImg": "https://i.ibb.co/bmdVJdn/ci4.jpg"
+  },
+  {
+    "className": "Swimming Lessons",
+    "students_no": 20,
+    "instructorName": "David Wilson",
+    "img": "https://i.ibb.co/1v1Y2BL/i5.jpg",
+    "instructorImg": "https://i.ibb.co/MSbyqVn/5.webp",
+    "email": "david.wilson@example.com",
+    "seats": 25,
+    "price": 55,
+    "classImg": "https://i.ibb.co/qFFMHH1/ci5.jpg"
+  },
+  {
+    "className": "Martial Arts Training",
+    "students_no": 18,
+    "instructorName": "Alex Chen",
+    "img": "https://i.ibb.co/rfjv38M/i6.webp",
+    "instructorImg": "https://i.ibb.co/GcZKCxF/6.jpg",
+    "email": "alex.chen@example.com",
+    "seats": 20,
+    "price": 70,
+    "classImg": "https://i.ibb.co/hR7YQQq/ci6.jpg"
+  },
+  {
+    "className": "Yoga for Beginners",
+    "students_no": 10,
+    "instructorName": "Emily Rodriguez",
+    "img": "https://i.ibb.co/grG5VjS/i7.jpg",
+    "instructorImg": "https://i.ibb.co/qMLS7kC/7.webp",
+    "email": "emily.rodriguez@example.com",
+    "seats": 15,
+    "price": 45,
+    "classImg": "https://i.ibb.co/9Tk99CS/ci7.jpg"
+  },
+  {
+    "className": "Cycling Adventures",
+    "students_no": 12,
+    "instructorName": "Daniel Evans",
+    "img": "https://i.ibb.co/vsZw4MY/i8.jpg",
+    "instructorImg": "https://i.ibb.co/8dSyzr9/8.jpg",
+    "email": "daniel.evans@example.com",
+    "seats": 15,
+    "price": 60,
+    "classImg": "https://i.ibb.co/8mwcRrr/ci8.jpg"
+  },
+  {
+    "className": "Golf Swing Techniques",
+    "students_no": 6,
+    "instructorName": "Olivia Anderson",
+    "img": "https://i.ibb.co/HKgyq50/i9.webp",
+    "instructorImg": "https://i.ibb.co/s1S4FFR/9.jpg",
+    "email": "olivia.anderson@example.com",
+    "seats": 8,
+    "price": 85,
+    "classImg": "https://i.ibb.co/HnbPmr8/ci9.jpg"
+  },
+  {
+    "className": "Volleyball Skills",
+    "students_no": 14,
+    "instructorName": "Matthew Roberts",
+    "img": "https://i.ibb.co/Pty9Pcp/i10.jpg",
+    "instructorImg": "https://i.ibb.co/bPRkpVd/10.jpg",
+    "email": "matthew.roberts@example.com",
+    "seats": 16,
+    "price": 55,
+    "classImg": "https://i.ibb.co/B2ZBLbV/ci10.jpg"
+  },
+  {
+    "className": "Baseball Fundamentals",
+    "students_no": 10,
+    "instructorName": "Sophia Davis",
+    "img": "https://i.ibb.co/Jc4CMqt/i11.jpg",
+    "instructorImg": "https://i.ibb.co/yFsNz7p/11.jpg",
+    "email": "sophia.davis@example.com",
+    "seats": 12,
+    "price": 50,
+    "classImg": "https://i.ibb.co/pJ57Zqw/ci11.jpg"
+  },
+  {
+    "className": "Skateboarding Lessons",
+    "students_no": 8,
+    "instructorName": "Jacob Thompson",
+    "img": "https://i.ibb.co/SJDXdTD/i12.jpg",
+    "instructorImg": "https://i.ibb.co/hLbDd8r/12.jpg",
+    "email": "jacob.thompson@example.com",
+    "seats": 10,
+    "price": 65,
+    "classImg": "https://i.ibb.co/WPvxZ3w/ci12.jpg"
+  }
+]
