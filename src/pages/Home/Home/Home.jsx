@@ -2,6 +2,7 @@ import useSports from "../../../hooks/useSports";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import SliderSection from "../SliderSection/SliderSection";
 import TopClasses from "../TopClasses/TopClasses";
+import TopInstructors from "../TopInstructors/TopInstructors";
 // import SectionTitle from "../../Shared/SectionTitle";
 
 const Home = () => {
@@ -22,6 +23,15 @@ const Home = () => {
       <div className=" mb-20 grid lg:grid-cols-3 max-w-7xl mx-auto gap-10  lg:px-0 py-10">
         {sortedClasses.slice(0, 6).map((item) => (
           <TopClasses key={item.id} item={item}></TopClasses>
+        ))}
+      </div>
+      <SectionTitle
+        heading="Top-Instructors at Sportopia"
+        subHeading="Collaborate and Thrive: Master the Game with Top Instructors at Sportopia"
+      ></SectionTitle>
+      <div className=" mb-20 grid lg:grid-cols-3 max-w-7xl mx-auto gap-10  lg:px-0 py-10">
+        {sortedClasses.slice(0, 6).map((item) => (
+          <TopInstructors key={item.id} item={item}></TopInstructors>
         ))}
       </div>
     </div>
