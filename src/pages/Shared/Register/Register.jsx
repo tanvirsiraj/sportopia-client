@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const {
@@ -11,6 +13,8 @@ const Register = () => {
     reset,
     // formState: { errors },
   } = useForm();
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
 
@@ -40,6 +44,25 @@ const Register = () => {
       setError("Password do not match");
     } else {
       setError("");
+      createUser(data.email, data.password).then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log("user profile information updated");
+            reset();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User info created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
     }
   };
   return (
