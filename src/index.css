@@ -46,3 +46,16 @@
   margin-bottom: 20px !important;
   color: #0057b8 !important;
 }
+
+.password-input-container {
+  position: relative;
+}
+
+.password-visibility-icon {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-30%);
+  cursor: pointer;
+  font-size: 18px;
+}
