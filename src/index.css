@@ -59,3 +59,25 @@
   cursor: pointer;
   font-size: 18px;
 }
+.logout {
+  color: #0057b8 !important;
+  background-color: white !important;
+}
+@media only screen and (max-width: 600px) {
+  .log {
+    position: relative;
+    z-index: -20;
+  }
+  .header {
+    position: relative;
+    z-index: 1000;
+  }
+  .dash a {
+    color: #0057b8 !important;
+    font-weight: 700;
+  }
+  .logout {
+    color: white !important;
+    background-color: #0057b8 !important;
+  }
+}

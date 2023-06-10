@@ -7,7 +7,7 @@ import { AuthContext } from "../../../providers/AuthProviders";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const { register, handleSubmit, reset } = useForm();
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -33,8 +33,19 @@ const Login = () => {
     });
   };
 
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <div>
+    <div className="log">
       <div className="hero min-h-screen bg-base-200 ">
         <div className="hero-content w-full max-w-xl flex flex-col">
           <div className="text-center lg:text-left w-full max-w-xl ">
@@ -98,7 +109,10 @@ const Login = () => {
           </div>
           <div className="flex flex-col w-full border-opacity-50 mt-5">
             <div className="divider">OR</div>
-            <div className="flex items-center font-bold btn btn-outline btn-primary text-primary-600">
+            <div
+              onClick={handleGoogleSignIn}
+              className="flex items-center font-bold btn btn-outline btn-primary text-primary-600"
+            >
               <FaGoogle className="mr-2"></FaGoogle> Login with Google
             </div>
           </div>

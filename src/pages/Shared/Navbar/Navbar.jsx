@@ -1,8 +1,21 @@
+import { useContext } from "react";
 import ActiveLink from "../ActiveLink/ActiveLink";
+import { AuthContext } from "../../../providers/AuthProviders";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // console.log('You are successfully LoggedOut');
+      })
+      .catch((error) => console.log(error));
+  };
+
   const navItems1 = (
-    <div className="flex flex-col lg:flex-row primary-color lg:text-white gap-3 lg:gap-10 font-semibold text-lg mb-6 lg:mb-0">
+    <div className="flex flex-col lg:flex-row primary-color lg:text-white gap-3 lg:gap-10 font-semibold text-lg mb-6 lg:mb-0 ">
       <ActiveLink to="/">Home</ActiveLink>
       <ActiveLink
         className="text-lg  font-semibold mt-2 lg:mt-0 lg:ms-14"
@@ -19,23 +32,48 @@ const Navbar = () => {
     </div>
   );
   const navItems2 = (
-    <div>
-      {/*  <div>
-        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
-        <div className="avatar">
-          <div className="w-24 rounded-full">
-            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+    <div className="nav">
+      {user ? (
+        <>
+          <div className="lg:flex items-center dash">
+            <ActiveLink
+              to="/dashboard"
+              className="text-lg dash text-[#0057b8] lg:text-white font-semibold mt-2 lg:mt-0 lg:ms-14 "
+            >
+              Dashboard
+            </ActiveLink>
+
+            <div className="w-10 rounded-full  lg:me-2 lg:ms-8 mt-6 lg:mt-2 ">
+              <div
+                className="avatar tooltip tooltip-bottom "
+                data-tip={user?.displayName}
+              >
+                <div
+                  className="w-12 rounded-full ring ring-[white] ring-offset-base-100 ring-offset-2 lg:items-center"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                >
+                  <img src={user?.photoURL} />
+                </div>
+              </div>
+            </div>
+            <Link
+              onClick={handleLogOut}
+              className="ms-0 lg:ms-8 mt-2 lg:mt-0 font-bold"
+            >
+              <button className="btn btn-outline btn-primary logout  border-0 mt-4">
+                Logout
+              </button>
+            </Link>
           </div>
-        </div>
-        <ActiveLink>
-          <button>Logout</button>
+        </>
+      ) : (
+        <ActiveLink to="/login">
+          <button className="btn btn-bg-white primary-color font-semibold text-lg ">
+            Login
+          </button>
         </ActiveLink>
-      </div> */}
-      <ActiveLink to="/login">
-        <button className="btn btn-bg-white primary-color font-semibold text-lg ">
-          Login
-        </button>
-      </ActiveLink>
+      )}
     </div>
   );
 

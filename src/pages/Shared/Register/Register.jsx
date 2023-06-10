@@ -13,7 +13,8 @@ const Register = () => {
     reset,
     // formState: { errors },
   } = useForm();
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleSignIn } =
+    useContext(AuthContext);
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
@@ -52,7 +53,7 @@ const Register = () => {
             console.log("user profile information updated");
             reset();
             Swal.fire({
-              position: "top-end",
+              position: "top-center",
               icon: "success",
               title: "User info created successfully.",
               showConfirmButton: false,
@@ -65,6 +66,18 @@ const Register = () => {
       });
     }
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200 ">
@@ -183,7 +196,10 @@ const Register = () => {
           </div>
           <div className="flex flex-col w-full border-opacity-50 mt-5 mb-10">
             <div className="divider">OR</div>
-            <div className="flex items-center font-bold btn btn-outline btn-primary text-primary-600">
+            <div
+              onClick={handleGoogleSignIn}
+              className="flex items-center font-bold btn btn-outline btn-primary text-primary-600"
+            >
               <FaGoogle className="mr-2"></FaGoogle> Sign Up with Google
             </div>
           </div>
