@@ -79,7 +79,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="log">
       <div className="hero min-h-screen bg-base-200 ">
         <div className="hero-content w-full max-w-xl flex flex-col">
           <div className="text-center lg:text-left w-full max-w-xl ">

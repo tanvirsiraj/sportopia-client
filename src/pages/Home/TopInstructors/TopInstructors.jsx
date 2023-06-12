@@ -7,7 +7,7 @@ const TopInstructors = ({ item }) => {
         </figure>
         <div className="card-body mb-4">
           <h2 className="font-bold">{item.instructorName}</h2>
-          <p>{item.className}</p>
+          <p className="font-semibold">{item.className}</p>
         </div>
       </div>
     </div>
