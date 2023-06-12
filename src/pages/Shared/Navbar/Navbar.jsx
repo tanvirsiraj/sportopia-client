@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   const navItems1 = (
-    <div className="flex flex-col lg:flex-row primary-color lg:text-white gap-3 lg:gap-10 font-semibold text-lg mb-6 lg:mb-0 ">
+    <div className="flex flex-col lg:flex-row primary-color lg:text-white gap-3 lg:gap-10 font-semibold text-lg mb-6 lg:mb-0 z">
       <ActiveLink to="/">Home</ActiveLink>
       <ActiveLink
         className="text-lg  font-semibold mt-2 lg:mt-0 lg:ms-14"
@@ -45,7 +45,7 @@ const Navbar = () => {
 
             <div className="w-10 rounded-full  lg:me-2 lg:ms-8 mt-6 lg:mt-2 ">
               <div
-                className="avatar tooltip tooltip-bottom "
+                className="avatar tooltip tooltip-bottom z-50"
                 data-tip={user?.displayName}
               >
                 <div
@@ -80,7 +80,7 @@ const Navbar = () => {
   return (
     <div className="primary-bg-color lg:px-32 text-white navbar bg-base-100 w-full">
       <div className="navbar-start ">
-        <div className="dropdown">
+        <div className="dropdown z-50">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
