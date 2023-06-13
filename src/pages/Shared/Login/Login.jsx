@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
@@ -8,9 +8,13 @@ import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const { register, handleSubmit, reset } = useForm();
   const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleTogglePassword = () => {
     setPasswordVisible(!passwordVisible);
@@ -30,6 +34,7 @@ const Login = () => {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
+      navigate(from, { replace: true });
     });
   };
 
@@ -38,6 +43,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

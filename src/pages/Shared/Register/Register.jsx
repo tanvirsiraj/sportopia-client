@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
@@ -15,6 +15,7 @@ const Register = () => {
   } = useForm();
   const { createUser, updateUserProfile, googleSignIn } =
     useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
@@ -59,6 +60,7 @@ const Register = () => {
               showConfirmButton: false,
               timer: 1500,
             });
+            navigate("/");
           })
           .catch((error) => {
             console.log(error);

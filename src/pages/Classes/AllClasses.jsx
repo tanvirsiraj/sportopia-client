@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "./../../providers/AuthProviders";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AllClasses = ({ item }) => {
   const { classImg, className, instructorName, price, _id } = item;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleAddToCart = (item) => {
     console.log(item);
     if (user && user.email) {
@@ -48,7 +50,7 @@ const AllClasses = ({ item }) => {
         confirmButtonText: "Login now!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login");
+          navigate("/login", { state: { from: location } });
         }
       });
     }
