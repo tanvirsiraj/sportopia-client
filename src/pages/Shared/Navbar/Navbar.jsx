@@ -68,11 +68,19 @@ const Navbar = () => {
           </div>
         </>
       ) : (
-        <ActiveLink to="/login">
-          <button className="btn btn-bg-white primary-color font-semibold text-lg ">
-            Login
-          </button>
-        </ActiveLink>
+        <div>
+          <ActiveLink
+            to="/dashboard"
+            className="text-lg dash  text-[#0057b8] lg:text-white font-semibold mt-2 lg:mt-0 lg:ms-14 "
+          >
+            Dashboard
+          </ActiveLink>
+          <ActiveLink to="/login">
+            <button className="btn ms-4 btn-bg-white primary-color font-semibold text-lg ">
+              Login
+            </button>
+          </ActiveLink>
+        </div>
       )}
     </div>
   );

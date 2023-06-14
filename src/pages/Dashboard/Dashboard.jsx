@@ -1,4 +1,4 @@
-import { FaHome, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -18,14 +18,10 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full ">
           {/* Sidebar content here */}
-          <li>
-            <NavLink to="/">
-              <FaHome></FaHome> Home
-            </NavLink>
-          </li>
+
           <li>
             <NavLink to="/dashboard/myselectedclasses">
-              <FaShoppingCart></FaShoppingCart> My Selected Classes
+              <FaShoppingCart></FaShoppingCart> My Selected Classes{" "}
             </NavLink>
           </li>
         </ul>

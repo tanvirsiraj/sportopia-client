@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
@@ -16,6 +16,9 @@ const Register = () => {
   const { createUser, updateUserProfile, googleSignIn } =
     useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
@@ -51,16 +54,29 @@ const Register = () => {
         console.log(loggedUser);
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
-            console.log("user profile information updated");
-            reset();
-            Swal.fire({
-              position: "top-center",
-              icon: "success",
-              title: "User info created successfully.",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            navigate("/");
+            const saveUser = { name: data.name, email: data.email };
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "User info created successfully.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  navigate("/");
+                }
+              });
+            // console.log("user profile information updated");
           })
           .catch((error) => {
             console.log(error);
@@ -74,6 +90,18 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
+        const saveUser = { name: user.displayName, email: user.email };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
         console.log(error);
