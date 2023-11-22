@@ -20,7 +20,7 @@ const AllClasses = ({ item }) => {
         price,
         email: user.email,
       };
-      fetch("http://localhost:5000/selectedclass", {
+      fetch("https://sportopia-server-pi.vercel.app/selectedclass", {
         method: "POST",
         headers: {
           "content-type": "application/json",

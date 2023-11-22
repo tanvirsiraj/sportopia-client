@@ -19,9 +19,12 @@ const MySelectedClasses = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        fetch(`http://localhost:5000/selectedclass/${item._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://sportopia-server-pi.vercel.app/selectedclass/${item._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

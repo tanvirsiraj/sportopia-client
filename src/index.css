@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  background: white;
+}
 .primary-color {
   color: #0057b8;
 }

@@ -9,7 +9,7 @@ const useSelectedclass = () => {
     queryKey: ["selectedclass", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/selectedclass?email=${user?.email}`
+        `https://sportopia-server-pi.vercel.app/selectedclass?email=${user?.email}`
       );
       return res.json();
     },
